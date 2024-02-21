@@ -1,0 +1,44 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             sam,CODE,READONLY
+    2 00000000 E3A00101        LDR              r0,=0x40000000 ;
+    3 00000004 E59F1010        LDR              r1,=0x40000050 ;
+    4 00000008 E4902004        LDR              r2,[r0],#0x4 ;
+    5 0000000C E4903004 
+                       L       LDR              r3,[r0],#0x4 ;
+    6 00000010 E4813004        STR              r3,[r1],#0x4 ;
+    7 00000014 E2522001        SUBS             r2,r2,#01   ;
+    8 00000018 1AFFFFFB        BNE              L
+    9 0000001C                 end
+              40000050 
+Command Line: --debug --xref --apcs=interwork --depend=.\ex1.d -o.\ex1.o -IC:\K
+eil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\Philips --predef
+ine="__EVAL SETA 1" --list=.\ex1.lst ex1.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+L 0000000C
+
+Symbol: L
+   Definitions
+      At line 5 in file ex1.asm
+   Uses
+      At line 8 in file ex1.asm
+Comment: L used once
+sam 00000000
+
+Symbol: sam
+   Definitions
+      At line 1 in file ex1.asm
+   Uses
+      None
+Comment: sam unused
+2 symbols
+335 symbols in table

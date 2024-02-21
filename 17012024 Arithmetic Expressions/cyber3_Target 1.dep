@@ -1,0 +1,2 @@
+Dependencies for Project 'cyber3', Target 'Target 1': (DO NOT MODIFY !)
+F (.\cyber4.s)(0x65A7A65F)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips--list .\cyber4.lst --xref -o .\cyber4.o --depend .\cyber4.d)

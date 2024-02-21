@@ -1,0 +1,47 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             quadexp,CODE,READONLY 
+                                                            ; axx + bx + c
+    2 00000000         
+    3 00000000 E3A00101        LDR              r0,=0x40000000
+    4 00000004 E890001E        LDM              r0,{r1-r4}  ;
+    5 00000008 E0050191        MUL              r5,r1,r1    ;
+    6 0000000C E0020295        MUL              r2,r5,r2    ;
+    7 00000010 E0010193        MUL              r1,r3,r1    ;
+    8 00000014 E0811002        ADD              r1,r1,r2    ;
+    9 00000018 E0811004        ADD              r1,r1,r4    ;
+   10 0000001C E5801010        str              r1,[r0,#0x10]
+   11 00000020 EAFFFFFE 
+                       l       b                l
+   12 00000024                 END
+Command Line: --debug --xref --apcs=interwork --depend=.\ex4.d -o.\ex4.o -IC:\K
+eil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\Philips --predef
+ine="__EVAL SETA 1" --list=.\ex4.lst ex4.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+l 00000020
+
+Symbol: l
+   Definitions
+      At line 11 in file ex4.asm
+   Uses
+      At line 11 in file ex4.asm
+Comment: l used once
+quadexp 00000000
+
+Symbol: quadexp
+   Definitions
+      At line 1 in file ex4.asm
+   Uses
+      None
+Comment: quadexp unused
+2 symbols
+333 symbols in table

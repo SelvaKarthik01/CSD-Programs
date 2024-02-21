@@ -1,0 +1,45 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             rootexp,CODE,READONLY 
+                                                            ; b^2 - 4ac 
+    2 00000000 E3A00101        LDR              r0,=0x40000000
+    3 00000004 E890000E        LDM              r0,{r1-r3}
+    4 00000008 E0040292        MUL              r4,r2,r2
+    5 0000000C E1A01101        LSL              r1,#2
+    6 00000010 E0050391        MUL              r5,r1,r3
+    7 00000014 E0446005        SUB              r6,r4,r5
+    8 00000018 E580600C        STR              r6,[r0,#0x0c]
+    9 0000001C EAFFFFFE 
+                       l       b                l
+   10 00000020                 END
+Command Line: --debug --xref --apcs=interwork --depend=.\ex5.d -o.\ex5.o -IC:\K
+eil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\Philips --predef
+ine="__EVAL SETA 1" --list=.\ex5.lst ex5.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+l 0000001C
+
+Symbol: l
+   Definitions
+      At line 9 in file ex5.asm
+   Uses
+      At line 9 in file ex5.asm
+Comment: l used once
+rootexp 00000000
+
+Symbol: rootexp
+   Definitions
+      At line 1 in file ex5.asm
+   Uses
+      None
+Comment: rootexp unused
+2 symbols
+333 symbols in table

@@ -1,0 +1,63 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             SASTRA,CODE,READONLY
+    2 00000000 E3A00101        MOV              r0,#0X40000000 ;source address
+    3 00000004 E3A01003        mov              r1,#3
+    4 00000008 E1A02001        mov              r2,r1
+    5 0000000C         register
+    6 0000000C E4903004 
+                       L2      ldr              r3,[r0],#4
+    7 00000010 E0804101        add              r4,r0,r1,LSL#2
+    8 00000014 E5843000        str              r3,[r4]
+    9 00000018 E2522001        subs             r2,#1
+   10 0000001C 1AFFFFFA        BNE              L2
+   11 00000020 EAFFFFFE 
+                       l       B                l
+   12 00000024                 end
+Command Line: --debug --xref --apcs=interwork --depend=.\cyber4.d -o.\cyber4.o 
+-IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\Philips --
+predefine="__EVAL SETA 1" --list=.\cyber4.lst cyber4.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+L2 0000000C
+
+Symbol: L2
+   Definitions
+      At line 6 in file cyber4.s
+   Uses
+      At line 10 in file cyber4.s
+Comment: L2 used once
+SASTRA 00000000
+
+Symbol: SASTRA
+   Definitions
+      At line 1 in file cyber4.s
+   Uses
+      None
+Comment: SASTRA unused
+l 00000020
+
+Symbol: l
+   Definitions
+      At line 11 in file cyber4.s
+   Uses
+      At line 11 in file cyber4.s
+Comment: l used once
+register 0000000C
+
+Symbol: register
+   Definitions
+      At line 5 in file cyber4.s
+   Uses
+      None
+Comment: register unused
+4 symbols
+335 symbols in table
