@@ -1,0 +1,7 @@
+--cpu ARM7TDMI
+".\startup.o"
+".\ledswc.o"
+--strict --scatter ".\LedSwc.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\LedSwc.map" -o .\LedSwc.axf
